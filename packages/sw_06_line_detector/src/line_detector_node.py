@@ -136,7 +136,7 @@ class LineDetectorNode(object):
 
     def processImage_(self, image_msg):
 
-        print("starting to process image")
+        print("starting to process image, n")
         start = time.time()
 
         self.stats.processed()
