@@ -7,9 +7,8 @@ import rospy
 ## CATEGORY 1
 def inRange(hsv_image, low_range, high_range):
 
-	return cv2.inRange(hsv_image, low_range, high_range)
+	#return cv2.inRange(hsv_image, low_range, high_range)
 
-	'''
     # hsv_image is a HSV HxWx3 image, low_range and high_range
     # are 3-dim vectors for each of the channels
 
@@ -29,13 +28,11 @@ def inRange(hsv_image, low_range, high_range):
 
     #assert np.array_equal(cv2.inRange(hsv_image, low_range, high_range), mask)
     return mask
-	'''
 
 def bitwise_or(bitwise1, bitwise2):
 
-	return cv2.bitwise_or(bitwise1, bitwise2)
+	#return cv2.bitwise_or(bitwise1, bitwise2)
 
-	'''
 	# Note: there is also a numpy function to do exactly this
     # np.bitwise_or(bitwise1, bitwise2)
     btw_or = np.zeros(dtype = np.uint8, shape=bitwise1.shape)
@@ -48,13 +45,11 @@ def bitwise_or(bitwise1, bitwise2):
                 
     #assert np.array_equal(btw_or, cv2.bitwise_or(bitwise1, bitwise2))
     return btw_or
-	'''
 	
 def bitwise_and(bitwise1, bitwise2):
 
-	return cv2.bitwise_and(bitwise1, bitwise2)
+	#return cv2.bitwise_and(bitwise1, bitwise2)
 
-	'''
 	# Note: there is also a numpy function to do exactly this
     # np.bitwise_and(bitwise1, bitwise2)
     btw_and = np.zeros(dtype = np.uint8, shape=bitwise1.shape)
@@ -67,16 +62,14 @@ def bitwise_and(bitwise1, bitwise2):
 
     #assert np.array_equal(btw_and, cv2.bitwise_and(bitwise1, bitwise2))
     return btw_and
-	'''
 
 def getStructuringElement(shape, size):
 	# Note: if it's even dimension,
     # just have to chop off right/bottom accordingly
     # ^integer division handles this automatically^
 
-	return cv2.getStructuringElement(shape, size)
+	#return cv2.getStructuringElement(shape, size)
     
-	'''
     output_array = np.zeros(dtype = np.uint8, shape=(size[1], size[0]))
     
     # Morph Rect
@@ -111,13 +104,11 @@ def getStructuringElement(shape, size):
                             Please check you have spelled it correctly""".format(shape))
     #assert np.equal_array(output_array, cv2.getStructuringElement(shape, size))
     return output_array
-	'''
 
 def dilate(bitwise, kernel):
 
-	return cv2.dilate(bitwise, kernel)
+	#return cv2.dilate(bitwise, kernel)
 
-	'''
     # In order to properly perform dilation, it is convenient
     # to first pad the image so we can easily slide
     # the kernel around
@@ -171,7 +162,6 @@ def dilate(bitwise, kernel):
 
 	# assert(padding_removed, cv2.dilate(bitwise, kernel)))
     return padding_removed
-	'''
 
 ## CATEGORY 2
 def Canny(image, threshold1, threshold2, apertureSize=3):
